@@ -1,0 +1,16 @@
+composer create-project laravel/laravel=9.5.1 01_laravel_basic
+
+php artisan
+
+php artisan perintah --help
+
+php artisan serve
+cd public/  -->  php -S localhost:8000
+
+php artisan make:test NamaTest
+php artisan make:test NamaTest --unit
+
+php artisan test
+
+export YOUTUBE="This is Env"
+YOUTUBE="This is Env"  -->  at folder .env
