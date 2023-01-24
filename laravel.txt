@@ -14,3 +14,25 @@ php artisan test
 
 export YOUTUBE="This is Env"
 YOUTUBE="This is Env"  -->  at folder .env
+
+php artisan config:cache
+php artisan config:clear
+
+php artisan make:provider NamaProvider
+
+php artisan | grep clear  -->  Tidak bisa
+php artisan clear-compiled
+
+BIND
+bind()
+singleton()
+instance()
+make()
+
+CONFIG CACHE
+meload semua file config
+
+SERVIDE PROVIDER CACHEs
+service provider tidak langsung diload oleh laravel, harus di tambahkan di config app.php dahulu.
+membuat service provider menjadi deferred dengan implements DeferrableProvider kemudian provides() lalu ubah Bootstrap cache nya dari eager ke deferred dengan cara hapus dahulu dengan perintah php artisan clear-compiled
+
