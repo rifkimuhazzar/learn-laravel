@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use Illuminate\Support\Carbon;
 
 class InputController extends Controller
 {
@@ -26,4 +27,33 @@ class InputController extends Controller
         $names = $request->input("products.*.name");
         return json_encode($names);
     }
+
+    public function inputType(Request $request): string {
+        $name = $request->input("name"); //string
+        $married = $request->boolean("married"); // input string langsung dikonversi ke boolean
+        $birthDate = $request->date("birth_date", "Y-m-d"); // input string langsung dikonversi ke date
+
+        return json_encode([
+            "name" => $name,
+            "married" => $married,
+            "birth_date" => $birthDate->format("Y-m-d")
+        ]);
+    }
+
+    public function filterOnly(Request $request): string {
+        $name = $request->only("name.first", "name.last"); // bisa menggunakan []
+        return json_encode($name);
+    }
+
+    public function filterExcept(Request $request): string {
+        $user = $request->except(["admin"]); // bisa tanpa []
+        return json_encode($user);
+    }
+
+    public function filterMerge(Request $request): string {
+        $request->merge(["admin" => "false"]);
+        $user = $request->input();
+        return json_encode($user);
+    }
+
 }

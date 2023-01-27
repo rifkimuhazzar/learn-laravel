@@ -43,3 +43,10 @@ php artisan view:cache
 php artisan view:clear
 
 php artisan make:controller NamaController
+
+php artisan storage:link
+
+JIKA TERJADI ERROR SAAT MEMBUAT TESTING FAKE
+Call to undefined function Illuminate\Http\Testing\imagecreatetruecolor()
+maku ke file php.ini di folder tempat menginstal phpnya
+kemudian cari extension=gd jika di comment maka uncomment
