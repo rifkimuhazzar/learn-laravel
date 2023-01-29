@@ -50,3 +50,7 @@ JIKA TERJADI ERROR SAAT MEMBUAT TESTING FAKE
 Call to undefined function Illuminate\Http\Testing\imagecreatetruecolor()
 maku ke file php.ini di folder tempat menginstal phpnya
 kemudian cari extension=gd jika di comment maka uncomment
+
+php artisan key:generate  -->  app.php, .env
+
+php artisan make:middleware NamaMiddleware
