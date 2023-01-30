@@ -54,3 +54,10 @@ kemudian cari extension=gd jika di comment maka uncomment
 php artisan key:generate  -->  app.php, .env
 
 php artisan make:middleware NamaMiddleware
+
+config/app.php and .env  -->  app debug pada .env, dev = true agar detail, prod = false agar sederhana
+
+MAINTENANCE MODE
+php artisan down  -->  akan ada file down di storage/framework/down
+php artisan down  --secret="yourSecretKey"-->  maintenance tapi bisa mengakses app/webnya, misal untuk testing
+php artisan down  -->  menghapus file down di storage/framework/down
